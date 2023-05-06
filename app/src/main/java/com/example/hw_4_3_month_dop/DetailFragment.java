@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.hw_4_3_month_dop.databinding.FragmentDetailBinding;
 
 
@@ -38,7 +39,7 @@ public class DetailFragment extends Fragment {
             planes = (Planes) getArguments().getSerializable("plane");
             binding.tvNameDt.setText(planes.getName());
             binding.tvDescDt.setText(planes.getDesc());
-            binding.imageView.setImageResource(planes.getImage());
+            Glide.with(this).load(planes.getImage()).into(binding.imageView);
 
         }
     }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
 import com.example.hw_4_3_month_dop.databinding.ActivityDetailBinding;
 
 public class DetailActivity extends AppCompatActivity {
@@ -21,9 +22,8 @@ public class DetailActivity extends AppCompatActivity {
 
     private void onGetExtra() {
         planes = (Planes) getIntent().getSerializableExtra("plane");
-        binding.imageView.setImageResource(planes.getImage());
+        Glide.with(this).load(planes.getImage()).into(binding.imageView);
         binding.tvNameDt.setText(planes.getName());
         binding.tvDescDt.setText(planes.getDesc());
-
     }
 }

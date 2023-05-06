@@ -5,9 +5,9 @@ import java.io.Serializable;
 public class Planes implements Serializable {
     private String name;
     private String desc;
-    private int image;
+    private String image;
 
-    public Planes(String name, String desc, int image) {
+    public Planes(String name, String desc, String image) {
         this.name = name;
         this.desc = desc;
         this.image = image;
@@ -29,11 +29,13 @@ public class Planes implements Serializable {
         this.desc = desc;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }
+
+
